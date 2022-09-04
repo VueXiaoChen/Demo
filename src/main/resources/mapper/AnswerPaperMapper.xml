@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.wiki.mapper.AnswerPaperMapper">
+  <resultMap id="BaseResultMap" type="com.example.wiki.domain.AnswerPaper">
+    <id column="PAPEREID" jdbcType="BIGINT" property="papereid" />
+    <result column="STQDBNTID" jdbcType="BIGINT" property="stqdbntid" />
+    <result column="BXAMID" jdbcType="BIGINT" property="bxamid" />
+    <result column="TOTALSCORE" jdbcType="DECIMAL" property="totalscore" />
+    <result column="AVAILABILITY" jdbcType="CHAR" property="availability" />
+    <result column="SUBMITTIHE" jdbcType="TIMESTAMP" property="submittihe" />
+    <result column="ISFINISH" jdbcType="CHAR" property="isfinish" />
+    <result column="URI" jdbcType="VARCHAR" property="uri" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PAPEREID, STQDBNTID, BXAMID, TOTALSCORE, AVAILABILITY, SUBMITTIHE, ISFINISH, URI
+  </sql>
+  <select id="selectByExample" parameterType="com.example.wiki.domain.AnswerPaperExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from answerpaper
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from answerpaper
+    where PAPEREID = #{papereid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from answerpaper
+    where PAPEREID = #{papereid,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.wiki.domain.AnswerPaperExample">
+    delete from answerpaper
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.wiki.domain.AnswerPaper">
+    insert into answerpaper (PAPEREID, STQDBNTID, BXAMID, 
+      TOTALSCORE, AVAILABILITY, SUBMITTIHE, 
+      ISFINISH, URI)
+    values (#{papereid,jdbcType=BIGINT}, #{stqdbntid,jdbcType=BIGINT}, #{bxamid,jdbcType=BIGINT}, 
+      #{totalscore,jdbcType=DECIMAL}, #{availability,jdbcType=CHAR}, #{submittihe,jdbcType=TIMESTAMP}, 
+      #{isfinish,jdbcType=CHAR}, #{uri,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.wiki.domain.AnswerPaper">
+    insert into answerpaper
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="papereid != null">
+        PAPEREID,
+      </if>
+      <if test="stqdbntid != null">
+        STQDBNTID,
+      </if>
+      <if test="bxamid != null">
+        BXAMID,
+      </if>
+      <if test="totalscore != null">
+        TOTALSCORE,
+      </if>
+      <if test="availability != null">
+        AVAILABILITY,
+      </if>
+      <if test="submittihe != null">
+        SUBMITTIHE,
+      </if>
+      <if test="isfinish != null">
+        ISFINISH,
+      </if>
+      <if test="uri != null">
+        URI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="papereid != null">
+        #{papereid,jdbcType=BIGINT},
+      </if>
+      <if test="stqdbntid != null">
+        #{stqdbntid,jdbcType=BIGINT},
+      </if>
+      <if test="bxamid != null">
+        #{bxamid,jdbcType=BIGINT},
+      </if>
+      <if test="totalscore != null">
+        #{totalscore,jdbcType=DECIMAL},
+      </if>
+      <if test="availability != null">
+        #{availability,jdbcType=CHAR},
+      </if>
+      <if test="submittihe != null">
+        #{submittihe,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isfinish != null">
+        #{isfinish,jdbcType=CHAR},
+      </if>
+      <if test="uri != null">
+        #{uri,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.wiki.domain.AnswerPaperExample" resultType="java.lang.Long">
+    select count(*) from answerpaper
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update answerpaper
+    <set>
+      <if test="row.papereid != null">
+        PAPEREID = #{row.papereid,jdbcType=BIGINT},
+      </if>
+      <if test="row.stqdbntid != null">
+        STQDBNTID = #{row.stqdbntid,jdbcType=BIGINT},
+      </if>
+      <if test="row.bxamid != null">
+        BXAMID = #{row.bxamid,jdbcType=BIGINT},
+      </if>
+      <if test="row.totalscore != null">
+        TOTALSCORE = #{row.totalscore,jdbcType=DECIMAL},
+      </if>
+      <if test="row.availability != null">
+        AVAILABILITY = #{row.availability,jdbcType=CHAR},
+      </if>
+      <if test="row.submittihe != null">
+        SUBMITTIHE = #{row.submittihe,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.isfinish != null">
+        ISFINISH = #{row.isfinish,jdbcType=CHAR},
+      </if>
+      <if test="row.uri != null">
+        URI = #{row.uri,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update answerpaper
+    set PAPEREID = #{row.papereid,jdbcType=BIGINT},
+      STQDBNTID = #{row.stqdbntid,jdbcType=BIGINT},
+      BXAMID = #{row.bxamid,jdbcType=BIGINT},
+      TOTALSCORE = #{row.totalscore,jdbcType=DECIMAL},
+      AVAILABILITY = #{row.availability,jdbcType=CHAR},
+      SUBMITTIHE = #{row.submittihe,jdbcType=TIMESTAMP},
+      ISFINISH = #{row.isfinish,jdbcType=CHAR},
+      URI = #{row.uri,jdbcType=VARCHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.wiki.domain.AnswerPaper">
+    update answerpaper
+    <set>
+      <if test="stqdbntid != null">
+        STQDBNTID = #{stqdbntid,jdbcType=BIGINT},
+      </if>
+      <if test="bxamid != null">
+        BXAMID = #{bxamid,jdbcType=BIGINT},
+      </if>
+      <if test="totalscore != null">
+        TOTALSCORE = #{totalscore,jdbcType=DECIMAL},
+      </if>
+      <if test="availability != null">
+        AVAILABILITY = #{availability,jdbcType=CHAR},
+      </if>
+      <if test="submittihe != null">
+        SUBMITTIHE = #{submittihe,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isfinish != null">
+        ISFINISH = #{isfinish,jdbcType=CHAR},
+      </if>
+      <if test="uri != null">
+        URI = #{uri,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PAPEREID = #{papereid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.wiki.domain.AnswerPaper">
+    update answerpaper
+    set STQDBNTID = #{stqdbntid,jdbcType=BIGINT},
+      BXAMID = #{bxamid,jdbcType=BIGINT},
+      TOTALSCORE = #{totalscore,jdbcType=DECIMAL},
+      AVAILABILITY = #{availability,jdbcType=CHAR},
+      SUBMITTIHE = #{submittihe,jdbcType=TIMESTAMP},
+      ISFINISH = #{isfinish,jdbcType=CHAR},
+      URI = #{uri,jdbcType=VARCHAR}
+    where PAPEREID = #{papereid,jdbcType=BIGINT}
+  </update>
+</mapper>
