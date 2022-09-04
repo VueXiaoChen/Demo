@@ -1306,3 +1306,5 @@ Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Da
 2022-09-04 14:44:33.858 INFO  com.example.wiki.aspect.LogAspect                 :79   [32m221520797817245696[0;39m 请求参数: [{"identity":"345345","remark":"3453535","username":"3435Gerald Weaver","userstate":"0"}]
 2022-09-04 14:44:33.865 INFO  com.example.wiki.aspect.LogAspect                 :91   [32m221520797817245696[0;39m 返回结果: {"data":{"identity":"345345","remark":"3453535","username":"3435Gerald Weaver","userstate":"0"},"message":"操作成功","success":true}
 2022-09-04 14:44:33.865 INFO  com.example.wiki.aspect.LogAspect                 :92   [32m221520797817245696[0;39m ------------- 结束 耗时：8 ms -------------
+2022-09-04 15:47:14.962 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-4 - Shutdown initiated...
+2022-09-04 15:47:14.969 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-4 - Shutdown completed.
