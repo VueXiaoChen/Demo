@@ -1,10 +1,17 @@
 package com.example.wiki.domain;
 
 public class StudentCourse {
+    /**
+     * 表主键
+     */
     private Long studentid;
-
+    /**
+     * 表主键
+     */
     private Long courseid;
-
+    /**
+     * 选学期
+     */
     private String term;
 
     public Long getStudentid() {

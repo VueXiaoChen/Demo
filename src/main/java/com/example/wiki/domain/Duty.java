@@ -2,9 +2,13 @@ package com.example.wiki.domain;
 
 public class Duty {
     private Long dutyid;
-
+    /**
+     * 职务名称
+     */
     private String dutyname;
-
+    /**
+     * 备注
+     */
     private String remark;
 
     public Long getDutyid() {

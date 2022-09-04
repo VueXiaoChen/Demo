@@ -3,22 +3,41 @@ package com.example.wiki.domain;
 import java.math.BigDecimal;
 
 public class ExamPaper {
+    /**
+     * 考试试卷的ID，主键
+     */
     private Long papbreid;
-
+    /**
+     * 考试Id
+     */
     private Long examid;
-
+    /**
+     * 试卷id
+     */
     private Long courseid;
-
+    /**
+     * 出卷老师id
+     */
     private Long publisherid;
-
+    /**
+     * 考号
+     */
     private String papercode;
-
+    /**
+     * 考试时间
+     */
     private Integer duration;
-
+    /**
+     * 总分
+     */
     private BigDecimal totalscore;
-
+    /**
+     * 出卷状态
+     */
     private Short submitstatb;
-
+    /**
+     * 试卷存放地址
+     */
     private String uri;
 
     public Long getPapbreid() {

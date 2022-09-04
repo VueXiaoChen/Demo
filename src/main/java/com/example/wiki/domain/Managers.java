@@ -1,14 +1,24 @@
 package com.example.wiki.domain;
 
 public class Managers {
+    /**
+     * 教务人员编号，主键
+     */
     private Long managbrid;
-
+    /**
+     * 教务人姓名
+     */
     private String managernahe;
+    /**
+     * 职务，可以存储多个职务编码
+     */
 
     private String duty;
+    /**
+     * 备注
+     */
 
     private String remark;
-
     public Long getManagbrid() {
         return managbrid;
     }

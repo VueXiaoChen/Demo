@@ -40,21 +40,21 @@
                              type="XMLMAPPER"/>
 
 <!--        <table tableName="test" domainObjectName="Demo"/>-->
-        <table tableName="Sys_Roles" domainObjectName="SysRoles"/>
-        <table tableName="Sys_Resource" domainObjectName="SysResource"/>
-        <table tableName="Sys_User_Roles" domainObjectName="SysUserRoles"/>
-        <table tableName="Sys_Role_Resource" domainObjectName="SysRoleResource"/>
+<!--        <table tableName="Sys_Roles" domainObjectName="SysRoles"/>-->
+<!--        <table tableName="Sys_Resource" domainObjectName="SysResource"/>-->
+<!--        <table tableName="Sys_User_Roles" domainObjectName="SysUserRoles"/>-->
+<!--        <table tableName="Sys_Role_Resource" domainObjectName="SysRoleResource"/>-->
         <table tableName="Teachers" domainObjectName="Teachers"/>
-        <table tableName="Managers" domainObjectName="Managers"/>
-        <table tableName="Duty" domainObjectName="Duty"/>
-        <table tableName="Students" domainObjectName="Students"/>
-        <table tableName="Courses" domainObjectName="Courses"/>
-        <table tableName="CoursesType" domainObjectName="CoursesType"/>
-        <table tableName="Student_Course" domainObjectName="StudentCourse"/>
-        <table tableName="Exam" domainObjectName="Exam"/>
-        <table tableName="ExamPaper" domainObjectName="ExamPaper"/>
-        <table tableName="AnswerPaper" domainObjectName="AnswerPaper"/>
-        <table tableName="Graders_Exam" domainObjectName="GradersExam"/>
+<!--        <table tableName="Managers" domainObjectName="Managers"/>-->
+<!--        <table tableName="Duty" domainObjectName="Duty"/>-->
+<!--        <table tableName="Students" domainObjectName="Students"/>-->
+<!--        <table tableName="Courses" domainObjectName="Courses"/>-->
+<!--        <table tableName="CoursesType" domainObjectName="CoursesType"/>-->
+<!--        <table tableName="Student_Course" domainObjectName="StudentCourse"/>-->
+<!--        <table tableName="Exam" domainObjectName="Exam"/>-->
+<!--        <table tableName="ExamPaper" domainObjectName="ExamPaper"/>-->
+<!--        <table tableName="AnswerPaper" domainObjectName="AnswerPaper"/>-->
+<!--        <table tableName="Graders_Exam" domainObjectName="GradersExam"/>-->
 
         <!--<table tableName="category"/>-->
         <!--<table tableName="doc"/>-->

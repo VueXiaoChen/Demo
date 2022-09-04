@@ -1,8 +1,13 @@
 package com.example.wiki.domain;
 
 public class SysUserRoles {
+    /**
+     * 引用Sys_User表，主键
+     */
     private Long usbrid;
-
+    /**
+     * 引用Sys_Roles表主键，主键
+     */
     private Long roleid;
 
     public Long getUsbrid() {

@@ -2,7 +2,9 @@ package com.example.wiki.domain;
 
 public class SysRoles {
     private Long roleid;
-
+    /**
+     * 角色名
+     */
     private String rolenahe;
 
     public Long getRoleid() {

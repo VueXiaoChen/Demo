@@ -1,8 +1,13 @@
 package com.example.wiki.domain;
 
 public class CoursesType {
+    /**
+     * 课程类型编号，主键
+     */
     private Long coursestypeid;
-
+    /**
+     * 课程类型名称
+     */
     private String coursestype;
 
     public Long getCoursestypeid() {

@@ -2,9 +2,13 @@ package com.example.wiki.domain;
 
 public class SysResource {
     private Long resourceid;
-
+    /**
+     * 资源名称
+     */
     private String resourcename;
-
+    /**
+     * 资源地址
+     */
     private String resourceurl;
 
     public Long getResourceid() {

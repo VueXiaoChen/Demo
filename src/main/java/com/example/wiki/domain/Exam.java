@@ -4,15 +4,26 @@ import java.util.Date;
 
 public class Exam {
     private Long examid;
-
+    /**
+     * 考试开始时间
+     */
     private Date startdate;
+    /**
+     * 考试结束时间
+     */
 
     private Date enddate;
-
+    /**
+     * 课程ID
+     */
     private Long courseid;
-
+    /**
+     * 出卷老师ID
+     */
     private Long publisherid;
-
+    /**
+     * 学期
+     */
     private String term;
 
     public Long getExamid() {

@@ -1,7 +1,13 @@
 package com.example.wiki.domain;
 
 public class SysRoleResource {
+    /**
+     * 引用自Sys-Roles表主键，主键
+     */
     private Long roleid;
+    /**
+     * 引用自Sys-Resource表主键，主键
+     */
 
     private Long rbsourcbid;
 

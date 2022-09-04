@@ -1,9 +1,18 @@
 package com.example.wiki.domain;
 
 public class Courses {
+    /**
+     * 课程编号，主键
+     */
     private Long courseid;
+    /**
+     * 课程名称
+     */
 
     private String coursename;
+    /**
+     * 课程类型
+     */
 
     private String coursestype;
 

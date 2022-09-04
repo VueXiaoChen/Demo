@@ -1,12 +1,21 @@
 package com.example.wiki.domain;
 
 public class Students {
+    /**
+     * 学生Id
+     */
     private Long studentid;
-
+    /**
+     * 学生姓名
+     */
     private String studentname;
-
+    /**
+     * 性别
+     */
     private Short grade;
-
+    /**
+     * 班级名称
+     */
     private String classname;
 
     public Long getStudentid() {

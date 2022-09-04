@@ -4,19 +4,43 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AnswerPaper {
+    /**
+     * 学生答卷ID
+     */
     private Long papereid;
+    /**
+     * 学生ID
+     */
 
     private Long stqdbntid;
+    /**
+     * 考试ID
+     */
 
     private Long bxamid;
+    /**
+     * 学生得分
+     */
 
     private BigDecimal totalscore;
+    /**
+     * 是否有效
+     */
 
     private String availability;
+    /**
+     * 交卷时间
+     */
 
     private Date submittihe;
+    /**
+     * 是否交卷
+     */
 
     private String isfinish;
+    /**
+     * 试卷存放地址
+     */
 
     private String uri;
 
