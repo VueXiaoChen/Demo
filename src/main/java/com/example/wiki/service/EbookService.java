@@ -78,7 +78,6 @@ public class EbookService {
     public void EbookSave(EbookSaveReq req){
         Ebook ebook = CopyUtil.copy(req,Ebook.class);
         if(ObjectUtils.isEmpty(req.getId())){
-
             if(ObjectUtils.isEmpty(SelectByName(req.getName()))){
                 //雪花算法生成Id
                 ebook.setId(snowFlake.nextId());

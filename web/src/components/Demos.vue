@@ -4,7 +4,7 @@ import axios from "axios";
 import { onMounted, reactive, ref } from "vue";
 
 const data = ref();
-const ids = []
+const ids = [];
 const update = () => {
   data.value.data.list[0].name = "我是谁啊";
   axios
@@ -20,11 +20,14 @@ const deletes = () => {
   //     console.log(res);
   //   });
 
-  axios
-    .post("http://localhost:8080/ebook/delete/",ids)
-    .then((res) => {
-      console.log("删除成功");
-    });
+  // axios
+  //   .post("http://localhost:8080/ebook/delete/",ids)
+  //   .then((res) => {
+  //     console.log("删除成功");
+  //   });
+  axios.post("http://localhost:8080/user/deletes",{userid:1}).then((res) => {
+    console.log(res);
+  });
 };
 const add = () => {
   const data = {
@@ -37,19 +40,15 @@ const add = () => {
     viewCount: 7,
     voteCount: 8,
   };
-  axios
-    .post("http://localhost:8080/ebook/save", data)
-    .then((res) => {
-      console.log(res);
-    });
+  axios.post("http://localhost:8080/ebook/save", data).then((res) => {
+    console.log(res);
+  });
 };
-const adddoccount = ()=>{
-  axios
-    .post("http://localhost:8080/ebook/adddoccount/" + 5)
-    .then((res) => {
-      console.log(res);
-    });
-}
+const adddoccount = () => {
+  axios.post("http://localhost:8080/ebook/adddoccount/" + 5).then((res) => {
+    console.log(res);
+  });
+};
 onMounted(async () => {
   const params = ref({
     page: 1,
@@ -61,19 +60,19 @@ onMounted(async () => {
   //   console.log(res.data.confirmedNum);
   // });
 
-  await axios
-    .get("http://localhost:8080/ebook/findall", {
-      params: {
-        page: params.value.page,
-        size: params.value.size,
-      },
-    })
-    .then((res) => {
-      data.value = res.data;
-      for(let i=0;i<4;i++){
-        ids.push(data.value.data.list[i].id)
-      }
-    });
+  // await axios
+  //   .get("http://localhost:8080/ebook/findall", {
+  //     params: {
+  //       page: params.value.page,
+  //       size: params.value.size,
+  //     },
+  //   })
+  //   .then((res) => {
+  //     data.value = res.data;
+  //     for (let i = 0; i < 4; i++) {
+  //       ids.push(data.value.data.list[i].id);
+  //     }
+  //   });
 });
 </script>
 <template>
@@ -81,7 +80,6 @@ onMounted(async () => {
   <el-button type="primary" @click="add">增加</el-button>
   <el-button type="primary" @click="deletes">删除</el-button>
   <el-button type="primary" @click="adddoccount">点赞功能测试</el-button>
-  
 </template>
 
 <style scoped>
